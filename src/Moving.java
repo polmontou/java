@@ -1,5 +1,5 @@
 /**
- * The class Demenagement
+ * Moving class
  */
 public class Moving {
     private int totalBoxes;
@@ -7,7 +7,7 @@ public class Moving {
     private int totalTrips;
 
     /**
-     * The constructor for the class Moving
+     * The Moving class's constructor
      */
     public Moving(int totalBoxes, int truckCapacity) {
         this.totalBoxes = totalBoxes;
@@ -15,7 +15,7 @@ public class Moving {
         this.totalTrips = 0;
     }
     /**
-     * The method who calculate the process of doing the Moving
+     * This methods displays each trip in the terminal
      */
     public void PerformMoving(){
         while (totalBoxes > 0){
@@ -24,8 +24,12 @@ public class Moving {
             }
             totalTrips++;
             totalBoxes -= truckCapacity;
-            System.out.println(truckCapacity + " ont été déplacés");
+            String message = truckCapacity + " ont été déplacés";
+            Message moveMessage = new Message(message);
+            moveMessage.DisplayMessage();
         }
-        System.out.println("Le déménagement est terminé en " + totalTrips + " voyages!");
+        String message = "Le déménagement est terminé en " + totalTrips + " voyage"+(totalTrips == 1 ? "":"s")+"!";
+        Message endMessage = new Message(message);
+        endMessage.DisplayMessage();
     }
 }

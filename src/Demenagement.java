@@ -7,15 +7,18 @@ public class Demenagement {
         while (!finished) {
             try {
                 Scanner clavier = new Scanner(System.in);
-                System.out.print("Combien de cartons à bouger? ");
+                Message inputMessage = new Message("Combien de cartons à bouger? ");
+                inputMessage.DisplayMessage();
                 int totalBoxes = clavier.nextInt();
-                System.out.print("Quelle est la capacité du camion? ");
+                Message input2Message = new Message("Quelle est la capacité du camion? ");
+                input2Message.DisplayMessage();
                 int truckCapacity = clavier.nextInt();
                 Moving moving = new Moving(totalBoxes, truckCapacity);
                 moving.PerformMoving();
                 finished = true;
             } catch (java.util.InputMismatchException e) {
-                System.out.println("Entrez un nombre entier");
+                Message errorMessage = new Message("Entrez un nombre entier");
+                errorMessage.DisplayMessage();
             }
         }
     }
