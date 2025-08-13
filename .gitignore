@@ -1,3 +1,4 @@
 *.class
 /out
 java.iml
+.idea/vcs.xml
