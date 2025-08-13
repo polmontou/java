@@ -17,19 +17,19 @@ public class Moving {
     /**
      * This methods displays each trip in the terminal
      */
-    public void PerformMoving(){
+    public void performMoving(){
         while (totalBoxes > 0){
             if(totalBoxes < truckCapacity){
                 truckCapacity = totalBoxes;
             }
             totalTrips++;
             totalBoxes -= truckCapacity;
-            String message = truckCapacity + " ont été déplacés";
-            Message moveMessage = new Message(message);
-            moveMessage.DisplayMessage();
+
+            Message.displayMessage(truckCapacity + " cartons ont été déplacés.");
+
         }
-        String message = "Le déménagement est terminé en " + totalTrips + " voyage"+(totalTrips == 1 ? "":"s")+"!";
-        Message endMessage = new Message(message);
-        endMessage.DisplayMessage();
+
+        Message.displayMessage("Le déménagement est terminé en " + totalTrips + " voyage"+(totalTrips <= 1 ? "":"s")+"!");
+
     }
 }
